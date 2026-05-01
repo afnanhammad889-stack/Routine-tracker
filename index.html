@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routine Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Daily Routine Tracker</p>
+        <h1>Build Healthy Habits</h1>
+        <p class="subtitle">Add daily activities, track weekly totals, and get a quick summary.</p>
+      </div>
+      <div class="header-stat">
+        <span id="total-hours">0</span>
+        <span>Hours Logged</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="card input-card">
+        <h2>Add Activity</h2>
+        <form id="activity-form">
+          <label>
+            Activity
+            <input id="activity-name" type="text" placeholder="Study, Exercise, Entertainment" required />
+          </label>
+          <label>
+            Category
+            <select id="activity-category" required>
+              <option value="Study">Study</option>
+              <option value="Exercise">Exercise</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Work">Work</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>
+            Hours
+            <input id="activity-hours" type="number" min="0.25" step="0.25" placeholder="1.5" required />
+          </label>
+          <button type="submit" class="btn-primary">Save Activity</button>
+        </form>
+      </section>
+
+      <section class="cards-grid">
+        <article class="card summary-card">
+          <div class="card-header">
+            <h2>Weekly Summary</h2>
+            <p class="small">Total hours per category</p>
+          </div>
+          <div id="summary-list" class="summary-list"></div>
+        </article>
+
+        <article class="card analysis-card">
+          <div class="card-header">
+            <h2>Analysis</h2>
+            <p class="small">A friendly activity suggestion</p>
+          </div>
+          <div id="analysis-message" class="analysis-message">Start adding activities to see your routine analysis.</div>
+        </article>
+      </section>
+
+      <section class="card table-card">
+        <div class="card-header">
+          <h2>Routine History</h2>
+          <p class="small">View all saved entries</p>
+        </div>
+        <div id="activity-list" class="activity-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
